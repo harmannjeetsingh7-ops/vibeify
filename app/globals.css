@@ -174,11 +174,6 @@ main > p {
     border-top: 4px solid #ff526b;
 }
 
-.moodCard:hover {
-    border-color: #ff526b;
-    transform: translateY(-4px);
-}
-
 .moodCard h3 {
     color: #ff8798;
     margin-bottom: 0.75rem;

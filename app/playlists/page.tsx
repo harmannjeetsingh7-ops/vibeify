@@ -17,20 +17,20 @@ export default function Playlists() {
     const [songs, setSongs] = useState<Song[]>([
         {
             _id: 1,
-            title: "Perfect",
-            artist: "Ed Sheeran",
+            title: "Queen of Hearts",
+            artist: "Harman kang",
             genre: "Pop"
         },
         {
             _id: 2,
-            title: "Blinding Lights",
-            artist: "The Weeknd",
+            title: "The last ride",
+            artist: "Sidhu Moosewala",
             genre: "Pop"
         },
         {
             _id: 3,
-            title: "Shape of You",
-            artist: "Ed Sheeran",
+            title: "Antidote",
+            artist: "Karan aujla",
             genre: "Pop"
         }
     ]);
@@ -46,7 +46,12 @@ export default function Playlists() {
 
         if (editingSong && editingSong._id === id) {
             setEditingSong(null);
-            reset();
+
+            reset({
+                title: "",
+                artist: "",
+                genre: ""
+            });
         }
     };
 
@@ -64,7 +69,12 @@ export default function Playlists() {
         if (editingSong) {
             setSongs(songs.map((song) =>
                 song._id === editingSong._id
-                    ? { ...song, ...data }
+                    ? {
+                        _id: song._id,
+                        title: data.title,
+                        artist: data.artist,
+                        genre: data.genre
+                    }
                     : song
             ));
 
@@ -82,7 +92,11 @@ export default function Playlists() {
             setNextId(nextId + 1);
         }
 
-        reset();
+        reset({
+            title: "",
+            artist: "",
+            genre: ""
+        });
     };
 
     return (
@@ -138,7 +152,12 @@ export default function Playlists() {
                         type="button"
                         onClick={() => {
                             setEditingSong(null);
-                            reset();
+
+                            reset({
+                                title: "",
+                                artist: "",
+                                genre: ""
+                            });
                         }}
                     >
                         Cancel
