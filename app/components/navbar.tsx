@@ -1,12 +1,13 @@
-
 'use client';
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useSessionCounter } from "@/app/context/globalContext";
 
 export default function Navbar() {
 
     const pathName: string = usePathname();
+    const { username } = useSessionCounter();
 
     const getLinkClass = (href: string) =>
         pathName === href || pathName.startsWith(href + '/')
@@ -41,6 +42,10 @@ export default function Navbar() {
                     </Link>
                 </li>
             </ul>
+
+            {!username && <p>Welcome, Guest</p>}
+            {username && <p>Welcome, {username}</p>}
+
         </nav>
     );
 }
