@@ -17,7 +17,7 @@ export default function Footer() {
             <hr />
 
             <p> COMP2112 | Georgian College</p>
-            <p>© 2026 Vibeify All rights reserved.</p>
+            <p>2026 Vibeify All rights reserved.</p>
         </footer>
     );
 }
