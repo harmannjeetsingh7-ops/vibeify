@@ -17,7 +17,7 @@ Vibeify is a music discovery and playlist management website created using Next.
 - CSS and Tailwind CSS
 - React Hook Form
 - Props, useState, useEffect and useContext
-- Fetch API
+- Fetch API I used force-cache to save and reuse API data, reducing repeated requests and helping the website load faster.
 
 ## Getting Started
 npm install
